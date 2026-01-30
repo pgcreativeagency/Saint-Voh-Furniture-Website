@@ -1,0 +1,568 @@
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+    --color-primary: #D4AF37;
+    /* Luxury Gold */
+    --color-primary-dark: #B4942D;
+    --color-text-main: #2A2A2A;
+    --color-text-light: #666666;
+    --color-bg-light: #F9F9F9;
+    --color-bg-dark: #121212;
+    --color-white: #FFFFFF;
+    --color-whatsapp: #25D366;
+
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Lato', sans-serif;
+
+    --transition-standard: all 0.3s ease;
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text-main);
+    background-color: var(--color-white);
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--color-text-main);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-standard);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================================
+   2. REUSABLE COMPONENTS
+   ========================================= */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.separator {
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-primary);
+    margin: 0 auto 20px;
+}
+
+.section-desc {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+    background-color: transparent;
+    border-color: var(--color-whatsapp);
+    color: var(--color-whatsapp);
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--color-whatsapp);
+    color: var(--color-white);
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+/* =========================================
+   3. HEADER & NAVIGATION
+   ========================================= */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 15px 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    /* Suggestive height, adjust as needed */
+    width: auto;
+}
+
+.nav-list {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-link {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: var(--color-text-main);
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: var(--transition-standard);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-text-main);
+}
+
+/* =========================================
+   4. HERO SECTION
+   ========================================= */
+.hero {
+    height: 100vh;
+    background: url('https://placehold.co/1920x1080/121212/333?text=Saint+Voh+Furniture') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    /* Override if header wasn't fixed */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Dark overlay for text readability */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: var(--color-white);
+    padding: 0 20px;
+}
+
+.hero-title {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    color: var(--color-white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    font-family: var(--font-body);
+}
+
+/* Animation utilities */
+.animate-fade-up {
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   5. SECTIONS
+   ========================================= */
+
+/* About Section */
+.about {
+    background-color: var(--color-white);
+}
+
+/* Products Section */
+.products {
+    background-color: var(--color-bg-light);
+}
+
+.category-tabs {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.tab {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    transition: var(--transition-standard);
+    background-color: var(--color-white);
+}
+
+.tab:hover,
+.tab.active {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-standard);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.product-card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+.card-details {
+    padding: 25px;
+    text-align: center;
+}
+
+.category {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.product-name {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--color-text-main);
+}
+
+.product-summary {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+/* Contact Section */
+.contact {
+    background-color: var(--color-bg-dark);
+    color: var(--color-white);
+}
+
+.contact .section-title,
+.contact .section-desc {
+    color: var(--color-white);
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.contact-info {
+    text-align: left;
+}
+
+.contact-list {
+    margin: 30px 0;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.contact-list li i {
+    color: var(--color-primary);
+    width: 30px;
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-standard);
+}
+
+.social-icon:hover {
+    background-color: var(--color-primary);
+    transform: translateY(-3px);
+}
+
+.social-icon i {
+    color: var(--color-white);
+    font-size: 1.2rem;
+}
+
+.map-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Footer */
+.footer {
+    background-color: #000;
+    color: #888;
+    padding: 30px 0;
+    font-size: 0.9rem;
+    border-top: 1px solid #222;
+}
+
+.footer-links {
+    margin-top: 15px;
+}
+
+.footer-links a:hover {
+    color: var(--color-primary);
+}
+
+.divider {
+    margin: 0 10px;
+}
+
+/* =========================================
+   6. RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 992px) {
+    .section-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        /* Fill rest of screen */
+        background-color: var(--color-white);
+        transition: 0.4s ease;
+        padding: 40px;
+        text-align: center;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+
+    .contact-list li {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .hero {
+        background-position: center left;
+    }
+
+    .category-tabs {
+        display: none;
+        /* Simplify for mobile or make horizontal scroll */
+    }
+}

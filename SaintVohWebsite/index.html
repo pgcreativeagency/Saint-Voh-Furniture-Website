@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saint Voh Furniture | Luxury Interiors</title>
+    <meta name="description"
+        content="Saint Voh Furniture - Exquisite luxury furniture for modern living. Beds, sofas, wardrobes, dining, cladding, and kitchen cabinets.">
+
+    <!-- Fonts: Cinzel for headings (Luxury), Lato for body text (Clean/Modern) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="header">
+        <div class="container nav-container">
+            <!-- Logo -->
+            <a href="#home" class="logo-link">
+                <img src="logo.png" alt="Saint Voh Furniture" class="logo">
+            </a>
+
+            <!-- Nav Links -->
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#products" class="nav-link">Products</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Menu Toggle (Functionality in main.js) -->
+            <div class="nav-toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content text-center">
+            <h1 class="hero-title animate-fade-up">Saint Voh Furniture</h1>
+            <p class="hero-subtitle animate-fade-up delay-1">Where Elegance Meets Comfort</p>
+            <a href="#products" class="btn btn-primary animate-fade-up delay-2">Explore Collection</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Our Essence</h2>
+                <div class="separator"></div>
+                <p class="section-desc">We craft more than furniture; we curate lifestyles. Saint Voh stands for
+                    minimalist luxury, delivering professional and modern aesthetics to your spaces.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products / Collections Section -->
+    <section id="products" class="section products">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Curated Collections</h2>
+                <div class="separator"></div>
+                <p class="section-desc">Discover our range of premium handcrafted pieces.</p>
+            </div>
+
+            <!-- Product Category Filter (Optional visual cue) -->
+            <div class="category-tabs text-center">
+                <span class="tab active">All</span>
+                <span class="tab">Bed</span>
+                <span class="tab">Sofa</span>
+                <span class="tab">Wardrobe</span>
+                <span class="tab">Dining</span>
+                <span class="tab">Cladding</span>
+                <span class="tab">Kitchen</span>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid">
+
+                <!-- Product 1: Bed -->
+                <article class="product-card">
+                    <div class="card-image">
+                        <img src="https://placehold.co/600x400/2a2a2a/d4af37?text=Luxury+Bed" alt="Imperial Bed">
+                        <span class="badge">Best Seller</span>
+                    </div>
+                    <div class="card-details">
+                        <span class="category">Bed</span>
+                        <h3 class="product-name">Imperial King Bed</h3>
+                        <p class="product-summary">Velvet upholstery with gold accents.</p>
+                        <a href="https://wa.me/2349032846878?text=I'm%20interested%20in%20ordering%20the%20Imperial%20King%20Bed"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Product 2: Sofa -->
+                <article class="product-card">
+                    <div class="card-image">
+                        <img src="https://placehold.co/600x400/2a2a2a/d4af37?text=Modern+Sofa" alt="Cloud Sofa">
+                    </div>
+                    <div class="card-details">
+                        <span class="category">Sofa</span>
+                        <h3 class="product-name">The Cloud Sectional</h3>
+                        <p class="product-summary">Minimalist design with premium fabric.</p>
+                        <a href="https://wa.me/2349032846878text=I'm%20interested%20in%20ordering%20The%20Cloud%20Sectional"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Product 3: Wardrobe -->
+                <article class="product-card">
+                    <div class="card-image">
+                        <img src="https://placehold.co/600x400/2a2a2a/d4af37?text=Wardrobe" alt="Glass Wardrobe">
+                    </div>
+                    <div class="card-details">
+                        <span class="category">Wardrobe</span>
+                        <h3 class="product-name">Vista Glass Wardrobe</h3>
+                        <p class="product-summary">Walk-in closet with ambient lighting.</p>
+                        <a href="https://wa.me/2349032846878?text=I'm%20interested%20in%20ordering%20the%20Vista%20Glass%20Wardrobe"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Product 4: Dining -->
+                <article class="product-card">
+                    <div class="card-image">
+                        <img src="https://placehold.co/600x400/2a2a2a/d4af37?text=Dining+Table" alt="Marble Dining">
+                    </div>
+                    <div class="card-details">
+                        <span class="category">Dining</span>
+                        <h3 class="product-name">Carrara Marble Table</h3>
+                        <p class="product-summary">6-seater with leather chairs.</p>
+                        <a href="https://wa.me/2349032846878?text=I'm%20interested%20in%20ordering%20the%20Carrara%20Marble%20Table"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Product 5: Cladding -->
+                <article class="product-card">
+                    <div class="card-image">
+                        <img src="https://placehold.co/600x400/2a2a2a/d4af37?text=Wall+Cladding" alt="Wood Cladding">
+                    </div>
+                    <div class="card-details">
+                        <span class="category">Cladding</span>
+                        <h3 class="product-name">Acoustic Wood Panels</h3>
+                        <p class="product-summary">Geometric designs for modern walls.</p>
+                        <a href="https://wa.me/2349032846878?text=I'm%20interested%20in%20ordering%20Acoustic%20Wood%20Panels"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Product 6: Kitchen Cabinet -->
+                <article class="product-card">
+                    <div class="card-image">
+                        <img src="https://placehold.co/600x400/2a2a2a/d4af37?text=Kitchen+Cabinet" alt="Kitchen Suite">
+                    </div>
+                    <div class="card-details">
+                        <span class="category">Kitchen Cabinet</span>
+                        <h3 class="product-name">Obsidian Kitchen Suite</h3>
+                        <p class="product-summary">Matte black finish with brass handles.</p>
+                        <a href="https://wa.me/2349032846878?text=I'm%20interested%20in%20ordering%20the%20Obsidian%20Kitchen%20Suite"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Order Now
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact dark-theme">
+        <div class="container">
+            <div class="contact-layout">
+                <div class="contact-info">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="contact-desc">Ready to transform your space? Contact us for a consultation or custom
+                        quote.</p>
+
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Luxury Blvd, Metropolis, NY 10012</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@saintvoh.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+1 (555) 000-8888</span>
+                        </li>
+                    </ul>
+
+                    <div class="social-links">
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-map">
+                    <!-- Placeholder for map -->
+                    <img src="https://placehold.co/600x300/1a1a1a/666?text=Map+Location" alt="Map" class="map-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 Saint Voh Furniture. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <span class="divider">|</span>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main Scripts -->
+    <script src="main.js"></script>
+</body>
+
+</html>
